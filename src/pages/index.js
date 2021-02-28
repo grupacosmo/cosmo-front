@@ -1,4 +1,4 @@
-import Layout from '../components/Layout'
+import { Layout } from '@components'
 
 const Home = () => {
   return <Layout title="COSMO PK | Strona główna">Home</Layout>
