@@ -1,3 +1,4 @@
-import Layout from './Layout'
+import Layout from './layout/Layout'
+import Hero from './home/Hero/Hero'
 
-export { Layout }
+export { Layout, Hero }

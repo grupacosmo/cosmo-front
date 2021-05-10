@@ -1,7 +1,11 @@
-import { Layout } from '@components'
+import { Layout, Hero } from '@components'
 
 const Home = () => {
-  return <Layout title="COSMO PK | Strona główna">Home</Layout>
+  return (
+    <Layout title="COSMO PK | Strona główna">
+      <Hero />
+    </Layout>
+  )
 }
 
 export default Home
