@@ -3,6 +3,7 @@
 import React from 'react'
 import Image from 'next/image'
 import NextLink from 'next/link'
+import { useScrollHeight } from '@hooks'
 import {
   Header,
   Link,
@@ -22,13 +23,17 @@ const links = [
 ]
 
 const Navbar = () => {
+  const scrollHeight = useScrollHeight()
+
   return (
-    <NavbarWrapper>
+    <NavbarWrapper isSmall={scrollHeight > 100}>
       <NavbarContent>
-        <LogoWrapper>
-          <Image src="/logo.svg" width={60} height={60} alt="COSMOPK" />
-          <Header>COSMO PK</Header>
-        </LogoWrapper>
+        <NextLink href="/">
+          <LogoWrapper>
+            <Image src="/logo.svg" width={60} height={60} alt="COSMOPK" />
+            <Header>COSMO PK</Header>
+          </LogoWrapper>
+        </NextLink>
         <NavbarLinks>
           {links.map((el, i) => (
             <NextLink href={el.link} key={i}>

@@ -2,6 +2,8 @@ const theme = {
   colors: {
     white: '#FFFFFF',
     black: '#000000',
+    primary: '#05273A',
+    opacityPrimary: 'rgba(3, 25, 38, 0.85)',
   },
   fontSizes: {
     p: 18,

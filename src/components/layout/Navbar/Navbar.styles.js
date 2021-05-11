@@ -6,8 +6,15 @@ export const NavbarWrapper = styled.nav`
   color: ${(props) => props.theme.colors.white};
   display: flex;
   align-items: center;
-  transform: translateY(50px);
+  transform: ${(props) =>
+    props.isSmall ? 'translateY(0)' : 'translateY(30px)'};
   z-index: 999;
+  padding: 20px 0;
+  background-color: ${({ isSmall, theme }) =>
+    isSmall ? theme.colors.opacityPrimary : 'none'};
+  transition-property: background-color, transform;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
 `
 
 export const NavbarContent = styled.div`
@@ -31,14 +38,17 @@ export const NavbarLinks = styled.div`
 export const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
+  cursor: pointer;
 `
 export const Link = styled.div`
   font-size: ${({ theme }) => `${theme.fontSizes.h4}px`};
   font-weight: 600;
   margin-left: 30px;
   cursor: pointer;
+  transition: transform 200ms ease;
 
   &:hover {
     text-decoration: underline;
+    transform: scale(1.05);
   }
 `

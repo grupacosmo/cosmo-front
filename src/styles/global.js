@@ -35,6 +35,7 @@ const GlobalStyles = createGlobalStyle`
         text-rendering: optimizeSpeed;
         line-height: 1.5;
         font-family: 'Fira Sans', sans-serif;
+        background-color: ${(props) => props.theme.colors.primary}
     }
 
     a:not([class]) {

@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint:css": "stylelint ./src/**/*.js",
+    "lint:css": "stylelint ./src/**/*.styles.js",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run"
   },
