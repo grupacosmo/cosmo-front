@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const Wrapper = styled.section`
   width: 100%;
-  background-color: ${(props) => props.theme.colors.primary};
+  background-color: ${(props) => props.theme.colors.white};
   padding: 60px;
 `
 

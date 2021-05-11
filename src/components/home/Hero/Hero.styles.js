@@ -22,7 +22,8 @@ export const HeroImage = styled.img`
   height: 100%;
   position: absolute;
   z-index: -1;
-  transform: ${(props) => `translateY(${props.translate * 0.3}px)`};
+  transform: ${(props) => `translateY(${props.translate * 0.15}px)`};
+  transition: transform 300ms ease;
 `
 
 export const Content = styled.div`

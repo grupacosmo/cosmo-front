@@ -4,6 +4,7 @@ const Home = () => {
   return (
     <Layout title="COSMO PK | Strona główna">
       <Hero />
+      <About />
       <Objectives />
     </Layout>
   )
