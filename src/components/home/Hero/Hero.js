@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import { usePageOffset } from '@hooks'
 import { useRouter } from 'next/router'
+import { Button } from '@common'
 import {
   Content,
   Heading,
@@ -14,7 +15,6 @@ import {
   CosmonautWrapper,
   MoonImage,
 } from './Hero.styles'
-import Button from '../../common/Button'
 
 const links = [
   {

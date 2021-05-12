@@ -12,7 +12,8 @@
           "@styles": "./src/styles",
           "@components": "./src/components",
           "@api": "./src/api",
-          "@hooks": "./src/hooks"
+          "@hooks": "./src/hooks",
+          "@common": "./src/components/common"
         }
       }
     ]

@@ -30,6 +30,10 @@ const GlobalStyles = createGlobalStyle`
         list-style: none;
     }
 
+    html {
+        scroll-behavior: smooth;
+    }
+    
     body {
         min-height: 100vh;
         text-rendering: optimizeSpeed;

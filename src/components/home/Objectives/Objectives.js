@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Button, Title } from '@common'
 import {
   Circle,
   CircleWrapper,
@@ -8,10 +9,8 @@ import {
   InnerWrapper,
   SingleObjective,
   SpaceShip,
-  Title,
   Wrapper,
 } from './Objectives.styles'
-import Button from '../../common/Button'
 
 const objectives = [
   {
@@ -46,7 +45,7 @@ const Objectives = () => {
 
   return (
     <Wrapper>
-      <Title>Nasze cele</Title>
+      <Title style={{ margin: '20px auto 50px auto' }}>Nasze cele</Title>
       <InnerWrapper>
         <SpaceShip src="/spaceship.svg" alt="spaceship" step={step} />
         {objectives.map((el) => (

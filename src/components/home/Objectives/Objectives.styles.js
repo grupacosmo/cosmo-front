@@ -15,13 +15,6 @@ export const InnerWrapper = styled.div`
   position: relative;
 `
 
-export const Title = styled.h1`
-  font-weight: 600;
-  text-align: center;
-  margin: 20px auto 50px auto;
-  font-size: ${(props) => `${props.theme.fontSizes.h1}px`};
-`
-
 export const SingleObjective = styled.div`
   display: flex;
   flex-direction: column;
