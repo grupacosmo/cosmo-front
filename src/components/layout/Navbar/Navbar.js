@@ -1,6 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react'
+import React, { memo } from 'react'
 import Image from 'next/image'
 import NextLink from 'next/link'
 import { useScrollHeight } from '@hooks'
@@ -22,7 +22,7 @@ const links = [
   { text: 'Aktualności', link: '/aktualnosci' },
 ]
 
-const Navbar = () => {
+const Navbar = memo(() => {
   const scrollHeight = useScrollHeight()
 
   return (
@@ -31,19 +31,23 @@ const Navbar = () => {
         <NextLink href="/">
           <LogoWrapper>
             <Image src="/logo.svg" width={60} height={60} alt="COSMOPK" />
-            <Header>COSMO PK</Header>
+            <Header isSmall={scrollHeight > 100}>COSMO PK</Header>
           </LogoWrapper>
         </NextLink>
         <NavbarLinks>
           {links.map((el, i) => (
             <NextLink href={el.link} key={i}>
-              <Link tabIndex={0}>{el.text}</Link>
+              <Link tabIndex={0} isSmall={scrollHeight > 100}>
+                {el.text}
+              </Link>
             </NextLink>
           ))}
         </NavbarLinks>
       </NavbarContent>
     </NavbarWrapper>
   )
-}
+})
+
+Navbar.displayName = 'Navbar'
 
 export default Navbar

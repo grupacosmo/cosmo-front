@@ -7,6 +7,7 @@ export const Wrapper = styled.section`
   z-index: 1;
   display: flex;
   flex-direction: column;
+  scroll-snap-align: start;
 `
 export const InnerWrapper = styled.div`
   width: 1000px;

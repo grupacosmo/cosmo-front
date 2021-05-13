@@ -9,10 +9,10 @@ export const NavbarWrapper = styled.nav`
   transform: ${(props) =>
     props.isSmall ? 'translateY(0)' : 'translateY(30px)'};
   z-index: 999;
-  padding: 20px 0;
+  padding: 10px 0;
   background-color: ${({ isSmall, theme }) =>
     isSmall ? theme.colors.opacityPrimary : 'none'};
-  transition-property: background-color, transform;
+  transition-property: background-color, transform, font-size;
   transition-duration: 0.2s;
   transition-timing-function: ease;
 `
@@ -26,7 +26,8 @@ export const NavbarContent = styled.div`
   justify-content: space-between;
 `
 export const Header = styled.h3`
-  font-size: ${({ theme }) => `${theme.fontSizes.h2}px`};
+  font-size: ${({ isSmall, theme }) =>
+    isSmall ? `${theme.fontSizes.h3}px` : `${theme.fontSizes.h2}px`};
   font-weight: 700;
   margin-left: 5px;
 `
@@ -41,7 +42,8 @@ export const LogoWrapper = styled.div`
   cursor: pointer;
 `
 export const Link = styled.div`
-  font-size: ${({ theme }) => `${theme.fontSizes.h4}px`};
+  font-size: ${({ isSmall, theme }) =>
+    isSmall ? `${theme.fontSizes.p}px` : `${theme.fontSizes.h4}px`};
   font-weight: 600;
   margin-left: 30px;
   cursor: pointer;

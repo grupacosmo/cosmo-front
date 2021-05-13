@@ -38,9 +38,10 @@ const links = [
 const Hero = () => {
   const offset = usePageOffset()
   const router = useRouter()
+
   return (
     <Wrapper>
-      <HeroImage src="/hero.jpg" alt="hero" translate={offset} />
+      <HeroImage src="/hero.jpg" alt="hero" />
       <MoonImage src="/moon.png" alt="moon" translate={offset} />
 
       <InnerWrapper>

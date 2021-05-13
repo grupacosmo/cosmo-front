@@ -5,6 +5,7 @@ export const Wrapper = styled.section`
   position: relative;
   height: 100vh;
   overflow: hidden;
+  scroll-snap-align: start;
 `
 
 export const InnerWrapper = styled.div`
@@ -22,7 +23,6 @@ export const HeroImage = styled.img`
   height: 100%;
   position: absolute;
   z-index: -1;
-  transform: ${(props) => `translateY(${props.translate * 0.1}px)`};
   transition: transform 100ms ease;
 `
 

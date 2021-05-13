@@ -4,6 +4,7 @@ export const Wrapper = styled.section`
   width: 100%;
   background-color: ${(props) => props.theme.colors.white};
   padding: 60px;
+  scroll-snap-align: start;
 `
 
 export const InnerWrapper = styled.div`
