@@ -5,7 +5,7 @@ const TitleComponent = styled.h1`
   font-weight: 600;
   text-align: center;
   font-size: ${(props) => `${props.theme.fontSizes[props.size]}px`};
-  color: ${(props) => `${props.theme.fontSizes[props.color]}`};
+  color: ${(props) => `${props.theme.colors[props.color]}`};
 `
 
 const Title = ({ children, size = 'h1', color = 'white', style = {} }) => {

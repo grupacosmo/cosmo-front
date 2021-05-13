@@ -1,4 +1,4 @@
-import { Layout, Hero, About, Objectives } from '@components'
+import { Layout, Hero, About, Objectives, Join } from '@components'
 
 const Home = () => {
   return (
@@ -6,6 +6,7 @@ const Home = () => {
       <Hero />
       <About />
       <Objectives />
+      <Join />
     </Layout>
   )
 }

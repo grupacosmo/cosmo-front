@@ -51,6 +51,7 @@ const About = () => {
               <InfoContent>
                 <Title
                   size="h3"
+                  color="secondary"
                   style={{
                     textAlign: i % 2 === 0 ? 'right' : 'left',
                     marginBottom: '15px',
