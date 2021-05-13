@@ -5,7 +5,6 @@ export const Wrapper = styled.section`
   position: relative;
   height: 100vh;
   overflow: hidden;
-  scroll-snap-align: start;
 `
 
 export const InnerWrapper = styled.div`

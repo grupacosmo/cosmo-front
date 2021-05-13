@@ -32,7 +32,7 @@ const GlobalStyles = createGlobalStyle`
 
     html {
         scroll-behavior: smooth;
-        scroll-snap-type: y mandatory;
+        scroll-padding: 75px 0;
     }
     
     body {
