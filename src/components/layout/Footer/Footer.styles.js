@@ -25,6 +25,7 @@ export const ContactWrapper = styled.div`
 
   @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
     margin-top: 20px;
+    width: 80%;
   }
 `
 
@@ -36,6 +37,8 @@ export const Flex = styled.div`
   @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
     justify-content: center;
     text-align: center;
+    max-width: 500px;
+    margin: auto;
 
     p {
       width: 300px;
