@@ -6,6 +6,10 @@ const TitleComponent = styled.h1`
   text-align: center;
   font-size: ${(props) => `${props.theme.fontSizes[props.size]}px`};
   color: ${(props) => `${props.theme.colors[props.color]}`};
+
+  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
+    text-align: center !important;
+  }
 `
 
 const Title = ({ children, size = 'h1', color = 'white', style = {} }) => {

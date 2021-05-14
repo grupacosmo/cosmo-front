@@ -14,6 +14,12 @@ const theme = {
     h3: 28,
     h4: 22,
   },
+  breakpoints: {
+    sm: '500px',
+    tablet: '768px',
+    smallLaptop: '1024px',
+    laptop: '1366px',
+  },
 }
 
 export default theme

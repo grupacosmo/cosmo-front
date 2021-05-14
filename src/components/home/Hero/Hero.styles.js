@@ -14,6 +14,14 @@ export const InnerWrapper = styled.div`
   margin: auto;
   display: flex;
   justify-content: center;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.smallLaptop}) {
+    width: 100%;
+  }
+
+  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
+    flex-direction: column-reverse;
+  }
 `
 
 export const HeroImage = styled.img`
@@ -36,6 +44,12 @@ export const Content = styled.div`
   justify-content: flex-end;
   transform: ${(props) => `translateY(${props.translate * 0.1}px)`};
   transition: transform 300ms ease;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
+    align-items: center;
+    text-align: center;
+    width: 90%;
+  }
 `
 
 export const Heading = styled.h1`
@@ -64,6 +78,14 @@ export const CosmonautWrapper = styled.div`
   height: 85%;
   display: flex;
   align-items: flex-end;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.smallLaptop}) {
+    align-items: center;
+  }
+
+  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
+    display: none;
+  }
 `
 
 export const CosmonautImage = styled.img`
@@ -71,6 +93,11 @@ export const CosmonautImage = styled.img`
   height: 450px;
   transform: ${(props) => `translateY(${props.translate * 0.2}px)`};
   transition: filter 0.4s ease-out, transform 300ms ease;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.smallLaptop}) {
+    max-width: 300px;
+    height: 300px;
+  }
 `
 
 export const MoonImage = styled.img`
@@ -81,4 +108,8 @@ export const MoonImage = styled.img`
   transition: filter 0.4s ease-out, transform 300ms ease;
   top: 100px;
   right: 30px;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.smallLaptop}) {
+    display: none;
+  }
 `

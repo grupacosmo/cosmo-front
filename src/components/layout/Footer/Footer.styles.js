@@ -14,8 +14,24 @@ export const InnerFooter = styled.div`
   color: ${(props) => props.theme.colors.white};
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
+    flex-direction: column;
+  }
 `
 
 export const ContactWrapper = styled.div`
   max-width: 350px;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
+    margin-top: 20px;
+
+    text-align: left !important;
+  }
+`
+
+export const Flex = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
 `

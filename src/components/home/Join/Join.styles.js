@@ -21,6 +21,7 @@ export const TeamsWrapper = styled.div`
 export const Team = styled.div`
   width: 350px;
   margin: 20px;
+  height: 250px;
   padding: 10px;
   display: flex;
   justify-content: center;
