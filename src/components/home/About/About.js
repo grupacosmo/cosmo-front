@@ -43,7 +43,7 @@ const About = () => {
         </Title>
         <InfoWrapper>
           {info.map((el, i) => (
-            <Info i={i} info={el} key={info.photo} />
+            <Info i={i} info={el} key={i} />
           ))}
         </InfoWrapper>
       </InnerWrapper>

@@ -20,13 +20,13 @@ const Contact = () => {
       </Flex>
       <Flex>
         <Image alt="localization" src="/place.svg" width={35} height={35} />
-        <Text style={{ marginLeft: '15px' }}>
-          Warszawska 24
-          <br />
-          Wydział Informatyki i telekomunikacji
-          <br />
-          Katedra Informatyki
-        </Text>
+        <div>
+          <Text style={{ marginLeft: '15px' }}>Warszawska 24</Text>
+          <Text style={{ marginLeft: '15px' }}>
+            Wydział Informatyki i telekomunikacji
+          </Text>
+          <Text style={{ marginLeft: '15px' }}>Katedra Informatyki</Text>
+        </div>
       </Flex>
     </ContactWrapper>
   )

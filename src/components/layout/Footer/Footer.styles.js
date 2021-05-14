@@ -26,6 +26,11 @@ export const ContactWrapper = styled.div`
   @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
     margin-top: 20px;
     width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: right;
   }
 `
 
@@ -33,15 +38,9 @@ export const Flex = styled.div`
   display: flex;
   align-items: center;
   margin-top: 10px;
+  width: 330px;
 
   @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
-    justify-content: center;
-    text-align: center;
-    max-width: 500px;
-    margin: auto;
-
-    p {
-      width: 300px;
-    }
+    justify-content: space-between;
   }
 `
