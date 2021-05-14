@@ -21,12 +21,10 @@ export const InnerFooter = styled.div`
 `
 
 export const ContactWrapper = styled.div`
-  max-width: 350px;
+  width: 350px;
 
   @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
     margin-top: 20px;
-
-    text-align: left !important;
   }
 `
 
@@ -34,4 +32,13 @@ export const Flex = styled.div`
   display: flex;
   align-items: center;
   margin-top: 10px;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
+    justify-content: center;
+    text-align: center;
+
+    p {
+      width: 300px;
+    }
+  }
 `
