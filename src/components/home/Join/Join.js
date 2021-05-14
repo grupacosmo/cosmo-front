@@ -58,7 +58,13 @@ const Join = () => {
         <TeamsWrapper>
           {teams.map((team) => (
             <Team key={team.title}>
-              <Image src={team.icon} alt="team icon" width={55} height={55} />
+              <Image
+                src={team.icon}
+                alt="team icon"
+                width={55}
+                height={55}
+                loading="lazy"
+              />
               <Title size="h4" color="secondary" style={{ marginTop: '20px' }}>
                 {team.title}
               </Title>

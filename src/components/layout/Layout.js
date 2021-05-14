@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { NextSeo } from 'next-seo'
 import Head from 'next/head'
 import Navbar from './Navbar/Navbar'
+import Footer from './Footer/Footer'
 
 const Main = styled.main`
   width: 100%;
@@ -18,6 +19,7 @@ const Layout = ({ children, title = 'Cosmo PK' }) => {
       <Main>
         <Navbar />
         {children}
+        <Footer />
       </Main>
     </>
   )

@@ -43,6 +43,10 @@ const GlobalStyles = createGlobalStyle`
         background-color: ${(props) => props.theme.colors.primary};
     }
 
+    a {
+        cursor: pointer;
+    }
+
     a:not([class]) {
         text-decoration-skip-ink: auto;
     }
@@ -59,6 +63,8 @@ const GlobalStyles = createGlobalStyle`
     select {
         font: inherit;
     }
+
+    
 
     @media (prefers-reduced-motion: reduce) {
         html:focus-within {

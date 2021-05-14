@@ -13,7 +13,8 @@
           "@components": "./src/components",
           "@api": "./src/api",
           "@hooks": "./src/hooks",
-          "@common": "./src/components/common"
+          "@common": "./src/components/common",
+          "@utils": "./src/utils/"
         }
       }
     ]

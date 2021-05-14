@@ -61,16 +61,16 @@ export const MediaLinks = styled.div`
 
 export const CosmonautWrapper = styled.div`
   width: 40%;
-  height: 100%;
+  height: 85%;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
 `
 
 export const CosmonautImage = styled.img`
   max-width: 450px;
   height: 450px;
   transform: ${(props) => `translateY(${props.translate * 0.2}px)`};
-  transition: transform 300ms ease;
+  transition: filter 0.4s ease-out, transform 300ms ease;
 `
 
 export const MoonImage = styled.img`
@@ -78,7 +78,7 @@ export const MoonImage = styled.img`
   width: 270px;
   height: 270px;
   transform: ${(props) => `translateY(${props.translate * 0.3}px)`};
-  transition: transform 300ms ease;
+  transition: filter 0.4s ease-out, transform 300ms ease;
   top: 100px;
   right: 30px;
 `

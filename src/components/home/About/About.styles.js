@@ -33,3 +33,9 @@ export const Text = styled.p`
   color: ${(props) => `${props.theme.fontSizes[props.color]}`};
   text-align: ${(props) => (props.isReversed ? 'right' : 'left')};
 `
+
+export const Image = styled.img`
+  width: 350px;
+  height: 300px;
+  transition: filter 0.4s ease-out;
+`

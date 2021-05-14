@@ -1,8 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
-import { usePageOffset } from '@hooks'
+import { usePageOffset, useLazyImage } from '@hooks'
 import { useRouter } from 'next/router'
 import { Button } from '@common'
+import { links } from '@utils'
 import {
   Content,
   Heading,
@@ -16,33 +17,26 @@ import {
   MoonImage,
 } from './Hero.styles'
 
-const links = [
-  {
-    icon: '/facebook.svg',
-    link: 'https://www.facebook.com/pkcosmopk/',
-  },
-  {
-    icon: '/twitter.svg',
-    link: 'https://twitter.com/pkcosmopk',
-  },
-  {
-    icon: '/github.svg',
-    link: 'https://github.com/grupacosmo',
-  },
-  {
-    icon: '/instagram.svg',
-    link: 'https://www.instagram.com/pkcosmopk/',
-  },
-]
+const cosmonaut = ['cosmonaut_small.png', 'cosmonaut.png']
+const moon = ['moon_small.png', 'moon.png']
 
 const Hero = () => {
   const offset = usePageOffset()
   const router = useRouter()
+  const [moonSrc, moonBlur] = useLazyImage(moon[0], moon[1])
+  const [cosmoSrc, cosmoBlur] = useLazyImage(cosmonaut[0], cosmonaut[1])
 
   return (
     <Wrapper>
       <HeroImage src="/hero.jpg" alt="hero" />
-      <MoonImage src="/moon.png" alt="moon" translate={offset} />
+      <MoonImage
+        src={moonSrc}
+        alt="moon"
+        translate={offset}
+        style={{
+          filter: moonBlur ? 'blur(20px)' : 'none',
+        }}
+      />
 
       <InnerWrapper>
         <Content translate={offset}>
@@ -69,9 +63,12 @@ const Hero = () => {
         </Content>
         <CosmonautWrapper>
           <CosmonautImage
-            src="/cosmonaut.png"
+            src={cosmoSrc}
             alt="cosmonaut"
             translate={offset}
+            style={{
+              filter: cosmoBlur ? 'blur(20px)' : 'none',
+            }}
           />
         </CosmonautWrapper>
       </InnerWrapper>
