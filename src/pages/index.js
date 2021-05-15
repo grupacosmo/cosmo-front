@@ -1,4 +1,12 @@
-import { Layout, Hero, About, Objectives, Join, Blog } from '@components'
+import {
+  Layout,
+  Hero,
+  About,
+  Objectives,
+  Join,
+  Blog,
+  Contact,
+} from '@components'
 import request from '@api'
 import { BLOG_POSTS } from '@graphql'
 
@@ -9,6 +17,7 @@ const Home = ({ posts }) => {
       <About />
       <Objectives />
       <Join />
+      <Contact />
       <Blog posts={posts} />
     </Layout>
   )
