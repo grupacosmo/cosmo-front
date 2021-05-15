@@ -24,6 +24,7 @@ const Button = ({
   color = 'primary',
   bg = 'white',
   size = 'p',
+  ...rest
 }) => {
   return (
     <StyledButton
@@ -32,6 +33,7 @@ const Button = ({
       bg={bg}
       color={color}
       size={size}
+      {...rest}
     >
       {children}
     </StyledButton>

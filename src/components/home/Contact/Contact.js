@@ -1,55 +1,25 @@
 import React, { useRef } from 'react'
-import styled from 'styled-components'
 import { Title, Button } from '@common'
 import { useLazyImage } from '@hooks'
 import Input from './Input'
 import Label from './Label'
-
-const Wrapper = styled.section`
-  width: 100%;
-  display: flex;
-  background-color: ${(props) => props.theme.colors.white};
-`
-
-const FormContainer = styled.div`
-  width: 50%;
-  background-color: ${(props) => props.theme.colors.primary};
-  padding: 100px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-`
-
-const Form = styled.form`
-  width: 100%;
-  width: 400px;
-  display: flex;
-  flex-direction: column;
-  color: ${(props) => props.theme.colors.white};
-`
-
-const ImageContainer = styled.div`
-  width: 50%;
-  background-color: ${(props) => props.theme.colors.white};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 100px 0;
-`
-
-const Image = styled.img`
-  width: 100%;
-  min-width: 400px;
-  max-width: 600px;
-  transition: filter 200ms ease;
-`
+import {
+  Form,
+  FormContainer,
+  Image,
+  ImageContainer,
+  Wrapper,
+} from './Contact.styles'
 
 const Contact = () => {
   const [src, blur] = useLazyImage('contact_small.png', 'contact.png')
   const inputEmailRef = useRef()
   const inputNameRef = useRef()
   const inputMessageRef = useRef()
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+  }
 
   return (
     <Wrapper>
@@ -64,7 +34,7 @@ const Contact = () => {
       </ImageContainer>
       <FormContainer>
         <Title size="h2">Kontakt</Title>
-        <Form>
+        <Form onSubmit={handleSubmit}>
           <Label htmlFor="name">Imię</Label>
           <Input
             name="name"
@@ -83,7 +53,10 @@ const Contact = () => {
             isTextArea
             rows={4}
           />
-          <Button style={{ alignSelf: 'center', marginTop: '30px' }}>
+          <Button
+            style={{ alignSelf: 'center', marginTop: '30px' }}
+            type="submit"
+          >
             Wyślij wiadomość
           </Button>
         </Form>
