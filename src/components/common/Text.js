@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 const TextComp = styled.p`
-  font-size: ${(props) => `${props.theme.fontSizes[props.size]}`};
-  color: ${(props) => `${props.theme.fontSizes[props.color]}`};
+  font-size: ${(props) => `${props.theme.fontSizes[props.size]}px`};
+  color: ${(props) => `${props.theme.colors[props.color]}`};
 `
 
 const Text = ({ children, color = 'primary', size = 'p', style = {} }) => {

@@ -15,6 +15,10 @@ export const NavbarWrapper = styled.nav`
   transition-property: background-color, transform, font-size;
   transition-duration: 0.2s;
   transition-timing-function: ease;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
+    padding: 20px;
+  }
 `
 
 export const NavbarContent = styled.div`
@@ -30,11 +34,19 @@ export const Header = styled.h3`
     isSmall ? `${theme.fontSizes.h3}px` : `${theme.fontSizes.h2}px`};
   font-weight: 700;
   margin-left: 5px;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
+    display: none;
+  }
 `
 
 export const NavbarLinks = styled.div`
   display: flex;
   align-items: center;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
+    display: none;
+  }
 `
 export const LogoWrapper = styled.div`
   display: flex;

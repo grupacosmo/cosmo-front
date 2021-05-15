@@ -8,7 +8,8 @@ const theme = {
     gray: '#F9FBFF',
   },
   fontSizes: {
-    p: 18,
+    psm: 14,
+    p: 16,
     h1: 48,
     h2: 34,
     h3: 28,

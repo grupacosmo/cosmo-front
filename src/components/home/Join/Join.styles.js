@@ -29,6 +29,12 @@ export const Team = styled.div`
   flex-direction: column;
   text-align: center;
   transition: all 200ms ease;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
+    width: 100%;
+    height: 300px;
+  }
+
   span {
     display: none;
   }

@@ -14,7 +14,8 @@
           "@api": "./src/api",
           "@hooks": "./src/hooks",
           "@common": "./src/components/common",
-          "@utils": "./src/utils/"
+          "@utils": "./src/utils",
+          "@graphql": "./src/graphql"
         }
       }
     ]

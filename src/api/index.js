@@ -1,13 +1,9 @@
 import { GraphQLClient } from 'graphql-request'
 
-const endpoint = `https://graphql.datocms.com/`
+const { ENDPOINT_URL } = process.env
 
-function request({ query, variables }) {
-  const client = new GraphQLClient(endpoint, {
-    headers: {
-      authorization: `Bearer ${process.env.NEXT_DATOCMS_API_TOKEN}`,
-    },
-  })
+const request = ({ query, variables }) => {
+  const client = new GraphQLClient(ENDPOINT_URL)
   return client.request(query, variables)
 }
 

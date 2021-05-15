@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
 
 const usePageOffset = () => {
-  const [offset, setOffset] = useState(0)
+  const [offset, setOffset] = useState(
+    typeof window !== 'undefined' ? window.pageYOffset : 0
+  )
 
   useEffect(() => {
     const handleOffsetChange = () => {
