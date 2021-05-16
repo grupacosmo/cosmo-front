@@ -1,10 +1,14 @@
 import React from 'react'
 import request from '@api'
-import { Layout } from '@components'
+import { Layout, SinglePost } from '@components'
 import { BLOG_SLUGS, SINGLE_POST } from '@graphql'
 
 const Post = ({ post }) => {
-  return <Layout title="COSMO PK | ">{JSON.stringify(post, null, 2)}</Layout>
+  return (
+    <Layout title="COSMO PK | ">
+      <SinglePost post={post} />
+    </Layout>
+  )
 }
 
 export default Post
