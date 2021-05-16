@@ -19,6 +19,7 @@ export const FormContainer = styled.div`
 export const Form = styled.form`
   width: 100%;
   width: 400px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   color: ${(props) => props.theme.colors.white};

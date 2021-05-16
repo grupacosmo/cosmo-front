@@ -24,11 +24,11 @@ const StyledTextArea = styled.textarea`
   resize: none;
 `
 
-const Input = forwardRef(({ isTextArea, ...rest }, ref) => {
+const Input = forwardRef(({ isTextArea, handleChange, ...rest }, ref) => {
   return isTextArea ? (
-    <StyledTextArea ref={ref} {...rest} />
+    <StyledTextArea ref={ref} onChange={handleChange} {...rest} />
   ) : (
-    <StyledInput ref={ref} {...rest} />
+    <StyledInput ref={ref} onChange={handleChange} {...rest} />
   )
 })
 

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useReducer } from 'react'
 import { Title, Button } from '@common'
 import { useLazyImage } from '@hooks'
 import Input from './Input'
@@ -11,14 +11,70 @@ import {
   Wrapper,
 } from './Contact.styles'
 
-const Contact = () => {
-  const [src, blur] = useLazyImage('contact_small.png', 'contact.png')
-  const inputEmailRef = useRef()
-  const inputNameRef = useRef()
-  const inputMessageRef = useRef()
+const FORM_SUBMIT_URL =
+  'https://formsubmit.co/ajax/5846537c5750581320ec0a3c0b03cee1'
 
-  const handleSubmit = (e) => {
+const initialState = {
+  error: '',
+  success: '',
+  loading: false,
+  name: '',
+  email: '',
+  message: '',
+}
+
+const Contact = () => {
+  const [form, setForm] = useReducer(
+    (state, newState) => ({ ...state, ...newState }),
+    initialState
+  )
+
+  const [src, blur] = useLazyImage('contact_small.png', 'contact.png')
+
+  const handleChange = (e) => {
+    setForm({ [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
+
+    setForm({ error: '', success: false, loading: true })
+
+    const { email, name, message } = form
+
+    try {
+      const response = await fetch(FORM_SUBMIT_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          name,
+          message,
+        }),
+      })
+
+      if (!response.ok) {
+        throw new Error('Wystąpił błąd')
+      }
+
+      const data = await response.json()
+
+      if (data.success === 'false') {
+        throw new Error(data.message)
+      }
+      setForm({ email: '', name: '', message: '', success: true })
+    } catch (error) {
+      setForm({ error: error.message })
+    } finally {
+      setForm({ loading: false })
+    }
+
+    setTimeout(() => {
+      setForm({ success: false })
+    }, 5000)
   }
 
   return (
@@ -41,17 +97,24 @@ const Contact = () => {
             type="text"
             required
             placeholder="Twoje imię"
-            ref={inputNameRef}
+            value={form.name}
+            handleChange={handleChange}
           />
           <Label htmlFor="email">Email</Label>
-          <Input name="email" placeholder="Twój email" ref={inputEmailRef} />
+          <Input
+            name="email"
+            placeholder="Twój email"
+            value={form.email}
+            handleChange={handleChange}
+          />
           <Label htmlFor="message">Wiadomość</Label>
           <Input
             name="message"
             placeholder="Twoja wiadomość"
-            ref={inputMessageRef}
+            value={form.message}
             isTextArea
             rows={4}
+            handleChange={handleChange}
           />
           <Button
             style={{ alignSelf: 'center', marginTop: '30px' }}
@@ -59,6 +122,12 @@ const Contact = () => {
           >
             Wyślij wiadomość
           </Button>
+
+          {!form.error && !form.loading && form.success && (
+            <Title size="p" color="white" style={{ marginTop: '20px' }}>
+              Wiadomość wysłana pomyślnie
+            </Title>
+          )}
         </Form>
       </FormContainer>
     </Wrapper>
