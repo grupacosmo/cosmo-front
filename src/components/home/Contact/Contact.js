@@ -23,6 +23,11 @@ const initialState = {
   message: '',
 }
 
+function validateEmail(email) {
+  const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  return re.test(String(email).toLowerCase())
+}
+
 const Contact = () => {
   const [form, setForm] = useReducer(
     (state, newState) => ({ ...state, ...newState }),
@@ -37,6 +42,11 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+
+    if (!validateEmail(form.email)) {
+      setForm({ error: 'Podany email jest niepoprawny' })
+      return
+    }
 
     setForm({ error: '', success: false, loading: true })
 
@@ -78,7 +88,7 @@ const Contact = () => {
   }
 
   return (
-    <Wrapper>
+    <Wrapper id="kontakt">
       <ImageContainer>
         <Image
           src={src}

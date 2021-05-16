@@ -29,7 +29,7 @@ const Post = ({ post }) => {
       <Button
         bg="primary"
         color="white"
-        handleClick={() => router.push(`/aktualnosci/${post.id}`)}
+        handleClick={() => router.push(`/aktualnosci/${post.slug}`)}
         size="psm"
       >
         Czytaj dalej

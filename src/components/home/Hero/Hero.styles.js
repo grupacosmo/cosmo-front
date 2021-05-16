@@ -5,6 +5,7 @@ export const Wrapper = styled.section`
   position: relative;
   height: 100vh;
   overflow: hidden;
+  z-index: 1;
 `
 
 export const InnerWrapper = styled.div`
@@ -30,7 +31,6 @@ export const HeroImage = styled.img`
   height: 100%;
   position: absolute;
   z-index: -1;
-  transition: transform 100ms ease;
 `
 
 export const Content = styled.div`

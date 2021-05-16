@@ -7,6 +7,11 @@ import Footer from './Footer/Footer'
 const Main = styled.main`
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  background-color: ${(props) => props.theme.colors.white};
 `
 
 const Layout = ({ children, title = 'Cosmo PK' }) => {

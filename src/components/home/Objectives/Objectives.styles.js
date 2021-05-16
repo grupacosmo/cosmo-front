@@ -7,6 +7,7 @@ export const Wrapper = styled.section`
   z-index: 1;
   display: flex;
   flex-direction: column;
+  background-color: ${(props) => props.theme.colors.primary};
 `
 export const InnerWrapper = styled.div`
   width: 1000px;
