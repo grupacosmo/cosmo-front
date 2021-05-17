@@ -1,6 +1,6 @@
 export default `
     query {
-        posts {
+        posts(orderBy: date_DESC) {
             slug
         }
     }

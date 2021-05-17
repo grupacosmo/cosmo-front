@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { NextSeo } from 'next-seo'
 import Head from 'next/head'
+import Seo from './Seo'
 import Navbar from './Navbar/Navbar'
 import Footer from './Footer/Footer'
 
@@ -14,13 +14,24 @@ const Main = styled.main`
   background-color: ${(props) => props.theme.colors.white};
 `
 
-const Layout = ({ children, title = 'Cosmo PK' }) => {
+const Layout = ({
+  children,
+  title = 'Cosmo PK',
+  description = '',
+  url = '',
+  imageUrl = '',
+}) => {
   return (
     <>
       <Head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <NextSeo title={title} />
+      <Seo
+        title={title}
+        url={url}
+        description={description}
+        imageUrl={imageUrl}
+      />
       <Main>
         <Navbar />
         {children}
