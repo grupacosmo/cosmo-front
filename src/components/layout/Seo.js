@@ -1,17 +1,22 @@
 import React from 'react'
 import { NextSeo } from 'next-seo'
 
-const Seo = ({ title, url, imageUrl = '', description = '' }) => {
+const Seo = ({
+  title,
+  url = '',
+  imageUrl = 'https://media.graphcms.com/output=format:jpg/6r5tqcvSXqBtg9UiiY5D',
+  description = '',
+}) => {
   return (
     <NextSeo
       title={title}
       description={description}
       canonical=""
       openGraph={{
-        url: `${url}`,
+        url: `http://cosmo.pk.edu.pl/${url}`,
         title,
         type: 'website',
-        description: '',
+        description,
         images: [
           {
             url: imageUrl,

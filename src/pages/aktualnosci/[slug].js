@@ -5,7 +5,12 @@ import { BLOG_SLUGS, SINGLE_POST } from '@graphql'
 
 const Post = ({ post }) => {
   return (
-    <Layout title="COSMO PK | ">
+    <Layout
+      title={`COSMO PK | ${post.title}`}
+      description={post.description}
+      url={`aktualnosci/${post.slug}`}
+      imageUrl={`${post.photo.url}`}
+    >
       <SinglePost post={post} />
     </Layout>
   )

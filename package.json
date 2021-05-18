@@ -11,6 +11,7 @@
     "cypress:run": "cypress run"
   },
   "dependencies": {
+    "framer-motion": "^4.1.17",
     "graphql": "^15.5.0",
     "graphql-request": "^3.4.0",
     "next": "10.0.7",
