@@ -4,7 +4,7 @@ import { NextSeo } from 'next-seo'
 const Seo = ({
   title,
   url = '',
-  imageUrl = 'https://media.graphcms.com/output=format:jpg/6r5tqcvSXqBtg9UiiY5D',
+  imageUrl = 'https://media.graphcms.com/output=format:jpg/fitI8JnRTC9VabITaIrj',
   description = '',
 }) => {
   return (
