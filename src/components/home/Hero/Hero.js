@@ -36,6 +36,11 @@ const Hero = () => {
         style={{
           filter: moonBlur ? 'blur(20px)' : 'none',
         }}
+        animate={{
+          scale: [1.02, 1.04, 1.06, 1.08, 1.1, 1.12],
+          rotate: 360,
+        }}
+        transition={{ repeat: Infinity, duration: 40, repeatType: 'reverse' }}
       />
 
       <InnerWrapper>
@@ -68,6 +73,14 @@ const Hero = () => {
             translate={offset}
             style={{
               filter: cosmoBlur ? 'blur(20px)' : 'none',
+            }}
+            animate={{
+              scale: [1.02, 1.04, 1.06, 1.08, 1.1],
+            }}
+            transition={{
+              repeat: Infinity,
+              duration: 5,
+              repeatType: 'reverse',
             }}
           />
         </CosmonautWrapper>

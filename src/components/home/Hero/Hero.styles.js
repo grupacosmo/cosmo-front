@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
 export const Wrapper = styled.section`
   width: 100%;
@@ -88,7 +89,7 @@ export const CosmonautWrapper = styled.div`
   }
 `
 
-export const CosmonautImage = styled.img`
+export const CosmonautImage = styled(motion.img)`
   max-width: 450px;
   height: 450px;
   transform: ${(props) => `translateY(${props.translate * 0.2}px)`};
@@ -100,7 +101,7 @@ export const CosmonautImage = styled.img`
   }
 `
 
-export const MoonImage = styled.img`
+export const MoonImage = styled(motion.img)`
   position: absolute;
   width: 270px;
   height: 270px;
