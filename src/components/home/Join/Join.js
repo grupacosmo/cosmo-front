@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import { Title, Text } from '@common'
+import { Title, Text, Section } from '@common'
 import { InnerWrapper, Team, TeamsWrapper, Wrapper } from './Join.styles'
 
 const teams = [
@@ -51,29 +51,35 @@ const teams = [
 const Join = () => {
   return (
     <Wrapper id="dolacz">
-      <InnerWrapper>
-        <Title size="h1" style={{ textAlign: 'center' }} color="secondary">
-          Dołącz do nas!
-        </Title>
-        <TeamsWrapper>
-          {teams.map((team) => (
-            <Team key={team.title}>
-              <Image
-                src={team.icon}
-                alt="team icon"
-                width={55}
-                height={55}
-                loading="lazy"
-              />
-              <Title size="h4" color="secondary" style={{ marginTop: '20px' }}>
-                {team.title}
-              </Title>
-              <Text style={{ marginTop: '10px' }}>{team.text}</Text>
-              <span>{team.secondaryText}</span>
-            </Team>
-          ))}
-        </TeamsWrapper>
-      </InnerWrapper>
+      <Section x="50vw">
+        <InnerWrapper>
+          <Title size="h1" style={{ textAlign: 'center' }} color="secondary">
+            Dołącz do nas!
+          </Title>
+          <TeamsWrapper>
+            {teams.map((team) => (
+              <Team key={team.title}>
+                <Image
+                  src={team.icon}
+                  alt="team icon"
+                  width={55}
+                  height={55}
+                  loading="lazy"
+                />
+                <Title
+                  size="h4"
+                  color="secondary"
+                  style={{ marginTop: '20px' }}
+                >
+                  {team.title}
+                </Title>
+                <Text style={{ marginTop: '10px' }}>{team.text}</Text>
+                <span>{team.secondaryText}</span>
+              </Team>
+            ))}
+          </TeamsWrapper>
+        </InnerWrapper>
+      </Section>
     </Wrapper>
   )
 }

@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react'
-import { Title, Button } from '@common'
+import { Title, Button, Section } from '@common'
 import { useLazyImage } from '@hooks'
 import Input from './Input'
 import Label from './Label'
@@ -88,59 +88,61 @@ const Contact = () => {
   }
 
   return (
-    <Wrapper id="kontakt">
-      <ImageContainer>
-        <Image
-          src={src}
-          style={{
-            filter: blur ? 'blur(20px)' : 'none',
-          }}
-          alt="contact"
-        />
-      </ImageContainer>
-      <FormContainer>
-        <Title size="h2">Kontakt</Title>
-        <Form onSubmit={handleSubmit}>
-          <Label htmlFor="name">Imię</Label>
-          <Input
-            name="name"
-            type="text"
-            required
-            placeholder="Twoje imię"
-            value={form.name}
-            handleChange={handleChange}
+    <Section>
+      <Wrapper id="kontakt">
+        <ImageContainer>
+          <Image
+            src={src}
+            style={{
+              filter: blur ? 'blur(20px)' : 'none',
+            }}
+            alt="contact"
           />
-          <Label htmlFor="email">Email</Label>
-          <Input
-            name="email"
-            placeholder="Twój email"
-            value={form.email}
-            handleChange={handleChange}
-          />
-          <Label htmlFor="message">Wiadomość</Label>
-          <Input
-            name="message"
-            placeholder="Twoja wiadomość"
-            value={form.message}
-            isTextArea
-            rows={4}
-            handleChange={handleChange}
-          />
-          <Button
-            style={{ alignSelf: 'center', marginTop: '30px' }}
-            type="submit"
-          >
-            Wyślij wiadomość
-          </Button>
+        </ImageContainer>
+        <FormContainer>
+          <Title size="h2">Kontakt</Title>
+          <Form onSubmit={handleSubmit}>
+            <Label htmlFor="name">Imię</Label>
+            <Input
+              name="name"
+              type="text"
+              required
+              placeholder="Twoje imię"
+              value={form.name}
+              handleChange={handleChange}
+            />
+            <Label htmlFor="email">Email</Label>
+            <Input
+              name="email"
+              placeholder="Twój email"
+              value={form.email}
+              handleChange={handleChange}
+            />
+            <Label htmlFor="message">Wiadomość</Label>
+            <Input
+              name="message"
+              placeholder="Twoja wiadomość"
+              value={form.message}
+              isTextArea
+              rows={4}
+              handleChange={handleChange}
+            />
+            <Button
+              style={{ alignSelf: 'center', marginTop: '30px' }}
+              type="submit"
+            >
+              Wyślij wiadomość
+            </Button>
 
-          {!form.error && !form.loading && form.success && (
-            <Title size="p" color="white" style={{ marginTop: '20px' }}>
-              Wiadomość wysłana pomyślnie
-            </Title>
-          )}
-        </Form>
-      </FormContainer>
-    </Wrapper>
+            {!form.error && !form.loading && form.success && (
+              <Title size="p" color="white" style={{ marginTop: '20px' }}>
+                Wiadomość wysłana pomyślnie
+              </Title>
+            )}
+          </Form>
+        </FormContainer>
+      </Wrapper>
+    </Section>
   )
 }
 

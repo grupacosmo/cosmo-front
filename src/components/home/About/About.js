@@ -1,5 +1,5 @@
 import React from 'react'
-import { Title } from '@common'
+import { Title, Section } from '@common'
 import { InfoWrapper, InnerWrapper, Wrapper } from './About.styles'
 import Info from './Info'
 
@@ -43,7 +43,9 @@ const About = () => {
         </Title>
         <InfoWrapper>
           {info.map((el, i) => (
-            <Info i={i} info={el} key={i} />
+            <Section key={el.photo} x={i % 2 === 0 ? '-50vw' : '50vw'}>
+              <Info i={i} info={el} />
+            </Section>
           ))}
         </InfoWrapper>
       </InnerWrapper>

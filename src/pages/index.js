@@ -6,6 +6,7 @@ import {
   Join,
   Blog,
   Contact,
+  Sponsors,
 } from '@components'
 import request from '@api'
 import { BLOG_POSTS } from '@graphql'
@@ -22,6 +23,7 @@ const Home = ({ posts }) => {
       <Join />
       <Contact />
       <Blog posts={posts} />
+      <Sponsors />
     </Layout>
   )
 }

@@ -12,6 +12,7 @@ const Main = styled.main`
   justify-content: space-between;
   min-height: 100vh;
   background-color: ${(props) => props.theme.colors.white};
+  overflow: hidden;
 `
 
 const Layout = ({
