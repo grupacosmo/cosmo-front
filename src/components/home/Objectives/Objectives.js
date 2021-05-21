@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Title } from '@common'
+import { Button, Title, Section } from '@common'
 import {
   Circle,
   CircleWrapper,
@@ -44,35 +44,37 @@ const Objectives = () => {
   }
 
   return (
-    <Wrapper>
-      <Title style={{ margin: '20px auto 50px auto' }}>Nasze cele</Title>
-      <InnerWrapper>
-        <SpaceShip src="/spaceship.svg" alt="spaceship" step={step} />
-        {objectives.map((el) => (
-          <SingleObjective key={el.date}>
-            <p>{el.text}</p>
-            <p>Rok {el.date}</p>
-            <Connection />
-            {el.isEarth ? (
-              <EarthImage src="/earth.png" alt="earth" />
-            ) : (
-              <CircleWrapper>
-                <Circle>
-                  <InnerCircle />
-                </Circle>
-              </CircleWrapper>
-            )}
-          </SingleObjective>
-        ))}
-      </InnerWrapper>
-      <Button
-        handleClick={handleClick}
-        type="button"
-        style={{ margin: '30px auto' }}
-      >
-        Kliknij!
-      </Button>
-    </Wrapper>
+    <Section>
+      <Wrapper>
+        <Title style={{ margin: '20px auto 50px auto' }}>Nasze cele</Title>
+        <InnerWrapper>
+          <SpaceShip src="/spaceship.svg" alt="spaceship" step={step} />
+          {objectives.map((el) => (
+            <SingleObjective key={el.date}>
+              <p>{el.text}</p>
+              <p>Rok {el.date}</p>
+              <Connection />
+              {el.isEarth ? (
+                <EarthImage src="/earth.png" alt="earth" />
+              ) : (
+                <CircleWrapper>
+                  <Circle>
+                    <InnerCircle />
+                  </Circle>
+                </CircleWrapper>
+              )}
+            </SingleObjective>
+          ))}
+        </InnerWrapper>
+        <Button
+          handleClick={handleClick}
+          type="button"
+          style={{ margin: '30px auto' }}
+        >
+          Kliknij!
+        </Button>
+      </Wrapper>
+    </Section>
   )
 }
 

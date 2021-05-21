@@ -27,10 +27,12 @@ const Hero = () => {
   const [moonSrc, moonBlur] = useLazyImage(moon[0], moon[1])
   const [cosmoSrc, cosmoBlur] = useLazyImage(cosmonaut[0], cosmonaut[1])
   const { ref, inView } = useInView()
+
   return (
     <Wrapper ref={ref}>
       <HeroImage src="/hero.jpg" alt="hero" />
       <MoonImage
+        inital={false}
         src={moonSrc}
         alt="moon"
         style={{
@@ -46,6 +48,7 @@ const Hero = () => {
 
       <InnerWrapper>
         <Content
+          inital={false}
           style={{
             y: inView ? offset * 0.2 : 0,
           }}
@@ -73,6 +76,7 @@ const Hero = () => {
         </Content>
         <CosmonautWrapper>
           <CosmonautImage
+            inital={false}
             src={cosmoSrc}
             alt="cosmonaut"
             style={{

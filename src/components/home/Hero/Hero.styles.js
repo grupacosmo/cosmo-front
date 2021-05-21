@@ -26,7 +26,7 @@ export const InnerWrapper = styled.div`
   }
 `
 
-export const HeroImage = styled.img`
+export const HeroImage = styled(motion.img)`
   width: 100%;
   object-fit: cover;
   height: 100%;

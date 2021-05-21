@@ -12,6 +12,7 @@ const Section = ({ children, x = '-50vw' }) => {
 
   return (
     <AnimatedSection
+      inital={false}
       ref={ref}
       animate={{ x: inView ? 0 : x, opacity: inView ? 1 : 0 }}
       initial={{ x, opacity: 0 }}
