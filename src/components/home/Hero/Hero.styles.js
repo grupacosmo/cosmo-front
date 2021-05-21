@@ -34,7 +34,7 @@ export const HeroImage = styled.img`
   z-index: -1;
 `
 
-export const Content = styled.div`
+export const Content = styled(motion.div)`
   height: 100%;
   width: 50%;
   margin: auto;
@@ -43,7 +43,6 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  transform: ${(props) => `translateY(${props.translate * 0.1}px)`};
   transition: transform 300ms ease;
 
   @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
@@ -92,7 +91,6 @@ export const CosmonautWrapper = styled.div`
 export const CosmonautImage = styled(motion.img)`
   max-width: 450px;
   height: 450px;
-  transform: ${(props) => `translateY(${props.translate * 0.2}px)`};
   transition: filter 0.4s ease-out, transform 300ms ease;
 
   @media (max-width: ${(props) => props.theme.breakpoints.smallLaptop}) {
@@ -105,7 +103,6 @@ export const MoonImage = styled(motion.img)`
   position: absolute;
   width: 270px;
   height: 270px;
-  transform: ${(props) => `translateY(${props.translate * 0.3}px)`};
   transition: filter 0.4s ease-out, transform 300ms ease;
   top: 100px;
   right: 30px;

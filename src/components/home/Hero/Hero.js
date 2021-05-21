@@ -4,6 +4,7 @@ import { usePageOffset, useLazyImage } from '@hooks'
 import { useRouter } from 'next/router'
 import { Button } from '@common'
 import { links } from '@utils'
+import { useInView } from 'react-intersection-observer'
 import {
   Content,
   Heading,
@@ -25,16 +26,16 @@ const Hero = () => {
   const router = useRouter()
   const [moonSrc, moonBlur] = useLazyImage(moon[0], moon[1])
   const [cosmoSrc, cosmoBlur] = useLazyImage(cosmonaut[0], cosmonaut[1])
-
+  const { ref, inView } = useInView()
   return (
-    <Wrapper>
+    <Wrapper ref={ref}>
       <HeroImage src="/hero.jpg" alt="hero" />
       <MoonImage
         src={moonSrc}
         alt="moon"
-        translate={offset}
         style={{
           filter: moonBlur ? 'blur(20px)' : 'none',
+          y: inView ? offset * 0.3 : 0,
         }}
         animate={{
           scale: [1.02, 1.04, 1.06, 1.08, 1.1, 1.12],
@@ -44,7 +45,11 @@ const Hero = () => {
       />
 
       <InnerWrapper>
-        <Content translate={offset}>
+        <Content
+          style={{
+            y: inView ? offset * 0.2 : 0,
+          }}
+        >
           <Heading>COSMO PK</Heading>
           <Text>Studenckie koło naukowe Politechniki Krakowskiej</Text>
           <MediaLinks>
@@ -70,9 +75,9 @@ const Hero = () => {
           <CosmonautImage
             src={cosmoSrc}
             alt="cosmonaut"
-            translate={offset}
             style={{
               filter: cosmoBlur ? 'blur(20px)' : 'none',
+              y: inView ? offset * 0.3 : 0,
             }}
             animate={{
               scale: [1.02, 1.04, 1.06, 1.08, 1.1],
