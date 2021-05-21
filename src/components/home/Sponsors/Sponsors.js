@@ -73,6 +73,7 @@ const Sponsors = () => {
         <AnimatePresence initial={false} custom={page.direction}>
           <ImageWrapper>
             <Image
+              loading="lazy"
               key={page.page}
               src={logos[page.page]}
               custom={page.direction}
@@ -84,9 +85,6 @@ const Sponsors = () => {
                 x: { type: 'spring', stiffness: 300, damping: 50 },
                 opacity: { duration: 0.2 },
               }}
-              drag="x"
-              dragConstraints={{ left: 0, right: 0 }}
-              dragElastic={1}
             />
           </ImageWrapper>
         </AnimatePresence>

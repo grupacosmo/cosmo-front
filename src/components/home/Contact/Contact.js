@@ -97,6 +97,7 @@ const Contact = () => {
               filter: blur ? 'blur(20px)' : 'none',
             }}
             alt="contact"
+            loading="lazy"
           />
         </ImageContainer>
         <FormContainer>

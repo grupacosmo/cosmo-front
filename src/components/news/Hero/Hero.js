@@ -7,7 +7,12 @@ const Hero = () => {
   const offset = usePageOffset()
   return (
     <Wrapper>
-      <HeroImage src="/hero.jpg" alt="background" translate={offset} />
+      <HeroImage
+        src="/hero.jpg"
+        alt="background"
+        translate={offset}
+        loading="lazy"
+      />
       <Title color="white">Aktualności</Title>
     </Wrapper>
   )

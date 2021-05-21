@@ -13,6 +13,7 @@ const Info = ({ info, i }) => {
         style={{
           filter: blur ? 'blur(20px)' : 'none',
         }}
+        loading="lazy"
       />
       <InfoContent>
         <Title

@@ -17,6 +17,7 @@ const Post = ({ post }) => {
         width={280}
         height={200}
         objectFit="contain"
+        loading="lazy"
       />
       <Title
         size="h4"

@@ -54,7 +54,7 @@ const Objectives = () => {
             <p>Rok {el.date}</p>
             <Connection />
             {el.isEarth ? (
-              <EarthImage src="/earth.png" alt="earth" />
+              <EarthImage src="/earth.png" alt="earth" loading="lazy" />
             ) : (
               <CircleWrapper>
                 <Circle>

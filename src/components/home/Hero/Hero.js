@@ -30,8 +30,9 @@ const Hero = () => {
 
   return (
     <Wrapper ref={ref}>
-      <HeroImage src="/hero.jpg" alt="hero" />
+      <HeroImage src="/hero.jpg" alt="hero" loading="lazy" />
       <MoonImage
+        loading="lazy"
         inital={false}
         src={moonSrc}
         alt="moon"
@@ -79,6 +80,7 @@ const Hero = () => {
             inital={false}
             src={cosmoSrc}
             alt="cosmonaut"
+            loading="lazy"
             style={{
               filter: cosmoBlur ? 'blur(20px)' : 'none',
               y: inView ? offset * 0.3 : 0,
