@@ -35,6 +35,10 @@ export const Team = styled.div`
     height: 300px;
   }
 
+  @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
+    height: 350px;
+  }
+
   span {
     display: none;
   }

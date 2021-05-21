@@ -55,4 +55,5 @@ export const Image = styled.img`
   width: 350px;
   height: 300px;
   transition: filter 0.4s ease-out;
+  object-fit: contain;
 `

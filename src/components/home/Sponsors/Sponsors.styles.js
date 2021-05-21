@@ -11,6 +11,12 @@ export const Wrapper = styled.section`
 export const ImageWrapper = styled.div`
   width: 600px;
   margin: 50px auto 10px auto;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
+    min-width: 300px;
+    max-width: 450px;
+    width: unset;
+  }
 `
 
 export const ButtonsWrapper = styled.div`
@@ -18,12 +24,20 @@ export const ButtonsWrapper = styled.div`
   width: 300px;
   justify-content: space-between;
   margin: 50px auto;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
+    width: 220px;
+  }
 `
 
 export const Image = styled(motion.img)`
   width: 100%;
   height: 300px;
   object-fit: contain;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
+    height: 200px;
+  }
 `
 
 export const CircleButton = styled.button`
