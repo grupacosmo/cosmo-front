@@ -40,6 +40,7 @@ export const ContentWrapper = styled.section`
   text-align: justify;
 
   p {
+    font-size: clamp(0.9rem, 0.8815rem + 0.0988vw, 1rem);
     padding: 5px 0;
     line-height: 1.5;
   }
