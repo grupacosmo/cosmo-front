@@ -48,10 +48,12 @@ export const Team = styled.div`
     img {
       display: none !important;
     }
-    h1 {
+
+    h2 {
       color: ${(props) => props.theme.colors.white} !important;
       margin-top: 0 !important;
     }
+
     p {
       display: none;
     }

@@ -34,6 +34,7 @@ export const Image = styled(motion.img)`
   width: 100%;
   height: 300px;
   object-fit: contain;
+  transition: filter 0.4s ease-out;
 
   @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
     height: 200px;

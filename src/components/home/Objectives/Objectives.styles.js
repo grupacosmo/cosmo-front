@@ -14,6 +14,13 @@ export const InnerWrapper = styled.div`
   display: flex;
   margin: auto;
   position: relative;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.smallLaptop}) {
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
 `
 
 export const SingleObjective = styled.div`
@@ -29,6 +36,17 @@ export const SingleObjective = styled.div`
     font-weight: 600;
     letter-spacing: 0.5px;
     text-align: center;
+  }
+
+  @media (max-width: ${(props) => props.theme.breakpoints.smallLaptop}) {
+    width: 100%;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    height: 200px;
+
+    p {
+      width: 200px;
+    }
   }
 `
 
@@ -67,12 +85,31 @@ export const SpaceShip = styled.img`
   width: 60px;
   height: 60px;
   top: 75%;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.smallLaptop}) {
+    top: 0;
+    left: 8%;
+    transform: ${(props) => `translateY(${props.step * 200 + 75}px )`}
+      rotate(180deg);
+  }
+
+  @media (max-width: 600px) {
+    left: 25px;
+  }
+
+  @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
+    left: 20px;
+  }
 `
 
 export const Connection = styled.div`
   height: 100px;
   width: 1px;
   border: 1px dashed white;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.smallLaptop}) {
+    display: none;
+  }
 `
 
 export const EarthImage = styled.img`

@@ -5,39 +5,19 @@ import { Title, Section } from '@common'
 import {
   ButtonsWrapper,
   CircleButton,
-  Image,
   Wrapper,
   ImageWrapper,
 } from './Sponsors.styles'
+import Logo from './Logo'
 
 const logos = [
-  '/logos/1.png',
-  '/logos/2.png',
-  '/logos/3.png',
-  '/logos/4.png',
-  '/logos/5.jpg',
+  { high: '/logos/1.png', low: '/logos/1_low.png' },
+  { high: '/logos/2.png', low: '/logos/2_low.png' },
+  { high: '/logos/3.png', low: '/logos/3_low.png' },
+  { high: '/logos/4.png', low: '/logos/4_low.png' },
+  { high: '/logos/5.jpg', low: '/logos/5_low.jpg' },
 ]
 
-const variants = {
-  enter: (direction) => {
-    return {
-      x: direction > 0 ? 600 : -600,
-      opacity: 0,
-    }
-  },
-  center: {
-    zIndex: 1,
-    x: 0,
-    opacity: 1,
-  },
-  exit: (direction) => {
-    return {
-      zIndex: 0,
-      x: direction < 0 ? 600 : -600,
-      opacity: 0,
-    }
-  },
-}
 const Sponsors = () => {
   const [page, setPage] = useState({ page: 0, direction: 0 })
 
@@ -64,7 +44,7 @@ const Sponsors = () => {
     return () => {
       clearInterval(id)
     }
-  }, [])
+  }, [paginate])
 
   return (
     <Wrapper>
@@ -72,20 +52,7 @@ const Sponsors = () => {
         <Title color="primary">Nasi sponsorzy</Title>
         <AnimatePresence initial={false} custom={page.direction}>
           <ImageWrapper>
-            <Image
-              loading="lazy"
-              key={page.page}
-              src={logos[page.page]}
-              custom={page.direction}
-              variants={variants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={{
-                x: { type: 'spring', stiffness: 300, damping: 50 },
-                opacity: { duration: 0.2 },
-              }}
-            />
+            <Logo page={page} logos={logos} />
           </ImageWrapper>
         </AnimatePresence>
         <ButtonsWrapper>
