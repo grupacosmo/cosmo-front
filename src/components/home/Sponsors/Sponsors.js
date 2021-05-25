@@ -44,10 +44,10 @@ const Sponsors = () => {
     return () => {
       clearInterval(id)
     }
-  }, [paginate])
+  }, [paginate, page])
 
   return (
-    <Wrapper>
+    <Wrapper id="sponsorzy">
       <Section x="50vw">
         <Title color="primary">Nasi sponsorzy</Title>
         <AnimatePresence initial={false} custom={page.direction}>

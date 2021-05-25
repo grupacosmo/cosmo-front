@@ -6,6 +6,7 @@ const theme = {
     secondary: '#0A4B71',
     opacityPrimary: 'rgba(3, 25, 38, 0.85)',
     gray: '#F9FBFF',
+    red: '#F71228',
   },
   fontSizes: {
     psm: 14,

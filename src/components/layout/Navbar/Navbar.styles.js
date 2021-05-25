@@ -18,6 +18,7 @@ export const NavbarWrapper = styled.nav`
 
   @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
     padding: 20px;
+    transform: none;
   }
 `
 

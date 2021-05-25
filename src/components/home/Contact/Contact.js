@@ -48,6 +48,11 @@ const Contact = () => {
       return
     }
 
+    if (!form.name || !form.message) {
+      setForm({ error: 'Uzupełnij wszystkie pola' })
+      return
+    }
+
     setForm({ error: '', success: false, loading: true })
 
     const { email, name, message } = form
@@ -134,6 +139,16 @@ const Contact = () => {
             >
               Wyślij wiadomość
             </Button>
+
+            {form.error && !form.loading && (
+              <Title
+                size="p"
+                color="red"
+                style={{ marginTop: '20px', textDecoration: 'underline' }}
+              >
+                {form.error}
+              </Title>
+            )}
 
             {!form.error && !form.loading && form.success && (
               <Title size="p" color="white" style={{ marginTop: '20px' }}>

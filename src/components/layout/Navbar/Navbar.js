@@ -4,6 +4,8 @@ import React, { memo } from 'react'
 import Image from 'next/image'
 import NextLink from 'next/link'
 import { useScrollHeight } from '@hooks'
+import MobileNavbar from './MobileNavbar'
+
 import {
   Header,
   Link,
@@ -13,7 +15,7 @@ import {
   NavbarWrapper,
 } from './Navbar.styles'
 
-const links = [
+export const links = [
   {
     text: 'Kim jesteśmy',
     link: '/#kim',
@@ -44,6 +46,7 @@ const Navbar = memo(() => {
           ))}
         </NavbarLinks>
       </NavbarContent>
+      <MobileNavbar />
     </NavbarWrapper>
   )
 })
