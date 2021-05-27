@@ -15,6 +15,11 @@ const StyledButton = styled.button`
   &:hover {
     transform: scale(1.05);
   }
+
+  &:disabled {
+    pointer-events: none;
+    background-color: ${(props) => props.theme.colors.gray};
+  }
 `
 
 const Button = ({

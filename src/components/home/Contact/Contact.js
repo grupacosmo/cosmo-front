@@ -107,7 +107,7 @@ const Contact = () => {
         </ImageContainer>
         <FormContainer>
           <Title size="h2">Kontakt</Title>
-          <Form onSubmit={handleSubmit}>
+          <Form onSubmit={handleSubmit} data-cy="form">
             <Label htmlFor="name">Imię</Label>
             <Input
               name="name"
@@ -136,12 +136,14 @@ const Contact = () => {
             <Button
               style={{ alignSelf: 'center', marginTop: '30px' }}
               type="submit"
+              disabled={!!form.loading}
             >
               Wyślij wiadomość
             </Button>
 
             {form.error && !form.loading && (
               <Title
+                data-cy="error"
                 size="p"
                 color="red"
                 style={{ marginTop: '20px', textDecoration: 'underline' }}
@@ -151,7 +153,12 @@ const Contact = () => {
             )}
 
             {!form.error && !form.loading && form.success && (
-              <Title size="p" color="white" style={{ marginTop: '20px' }}>
+              <Title
+                size="p"
+                color="white"
+                style={{ marginTop: '20px' }}
+                data-cy="success"
+              >
                 Wiadomość wysłana pomyślnie
               </Title>
             )}

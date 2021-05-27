@@ -39,7 +39,11 @@ const Navbar = memo(() => {
         <NavbarLinks>
           {links.map((el, i) => (
             <NextLink href={el.link} key={i}>
-              <Link tabIndex={0} isSmall={scrollHeight > 100}>
+              <Link
+                tabIndex={0}
+                isSmall={scrollHeight > 100}
+                data-cy="nav-item"
+              >
                 {el.text}
               </Link>
             </NextLink>
