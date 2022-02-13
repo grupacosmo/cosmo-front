@@ -1,9 +1,8 @@
-Cosmo Front
-How to run
+# Cosmo Front
 
-```
-clone repo
-cd ./cosmo-front
+## Development
+
+```bash
 npm i
 npm run dev
 ```
