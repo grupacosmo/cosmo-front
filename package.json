@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p 8080",
+    "start": "next start -p 4000",
     "lint:css": "stylelint ./src/**/*.js",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run"
