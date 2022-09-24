@@ -5,24 +5,24 @@ import {
   Objectives,
   Join,
   Blog,
-  Contact,
+  // Contact,
   Sponsors,
 } from '@components'
-import request from '@api'
-import { BLOG_POSTS } from '@graphql'
+
+// import { BLOG_POSTS } from '@graphql'
 
 const description =
-  'Jesteśmy grupą młodych ludzi, studentów Politechniki Krakowskiej. W przerwach od nauki spotykamy się by realizować wspólny cel - wysłać własnego satelitę na orbitę. Nasze zmagania można obserwować na naszych kanałach w mediach społecznościowych. Trzymajcie kciuki!'
+  'COSMO PK jest kołem naukowym pracującym na Politechnice Krakowskiej. Zajmujemy się tematyką eksploracji kosmosu, zwłaszcza interesujemy się budową sond i satelit. Nasza działalność dotyczy głównie IT, ale poszerzamy też naszą wiedzę w tematach związanych z mechaniką i elektrotechniką. Naszym największym projektem do tej pory jest stworzenie i wysłanie wyniesienie sondy stratosferycznej HABSat.'
 
 const Home = ({ posts }) => {
   return (
     <Layout title="COSMO PK | Strona główna" description={description}>
       <Hero />
+      <Blog posts={posts}/>
       <About />
       <Objectives />
       <Join />
-      <Contact />
-      <Blog posts={posts} />
+      {/* <Contact /> */}
       <Sponsors />
     </Layout>
   )
@@ -31,7 +31,16 @@ const Home = ({ posts }) => {
 export default Home
 
 export const getStaticProps = async () => {
-  const { posts } = await request({ query: BLOG_POSTS })
 
-  return { props: { posts } }
+  const { API_URL } = process.env
+  const postsPath = API_URL + "/posts?populate=*"
+
+  const res = await fetch(postsPath)
+  const data = await res.json()
+
+  return {
+    props: {
+      posts: data.data
+    }
+  }
 }

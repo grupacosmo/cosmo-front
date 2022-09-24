@@ -11,11 +11,11 @@ import {
 import Logo from './Logo'
 
 const logos = [
-  { high: '/logos/1.png', low: '/logos/1_low.png' },
-  { high: '/logos/2.png', low: '/logos/2_low.png' },
-  { high: '/logos/3.png', low: '/logos/3_low.png' },
-  { high: '/logos/4.png', low: '/logos/4_low.png' },
-  { high: '/logos/5.jpg', low: '/logos/5_low.jpg' },
+  { high: '/logos/botland.png',                 low: '/logos/botland_low.png' },
+  { high: '/logos/future_lab.jpg',              low: '/logos/future_lab_low.jpg' },
+  { high: '/logos/katedra_informatyki.png',     low: '/logos/katedra_informatyki_low.png' },
+  { high: '/logos/politechnika_krakowska.png',  low: '/logos/politechnika_krakowska_low.png' },
+  { high: '/logos/spectator_earth.png',         low: '/logos/spectator_earth_low.png' },
 ]
 
 const Sponsors = () => {
@@ -49,7 +49,7 @@ const Sponsors = () => {
   return (
     <Wrapper id="sponsorzy">
       <Section x="50vw">
-        <Title color="primary">Nasi sponsorzy</Title>
+        <Title color="primary">Nasi partnerzy</Title>
         <AnimatePresence initial={false} custom={page.direction}>
           <ImageWrapper>
             <Logo page={page} logos={logos} />

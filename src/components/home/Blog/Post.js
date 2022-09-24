@@ -4,6 +4,8 @@ import Image from 'next/image'
 import { Text, Title, Button } from '@common'
 import { PostWrapper } from './Blog.styles'
 
+const { URL } = process.env
+
 const trucanate = (text, pos) => {
   return text.slice(0, pos).concat('...')
 }
@@ -13,7 +15,8 @@ const Post = ({ post }) => {
   return (
     <PostWrapper>
       <Image
-        src={post.photo.url}
+        // src={API_PATH + post.thumbnail.data.attributes.formats.medium.url}
+        src={URL + post.attributes.thumbnail.data.attributes.url}
         width={280}
         height={200}
         objectFit="contain"
@@ -26,11 +29,11 @@ const Post = ({ post }) => {
       >
         {post.title}
       </Title>
-      <Text size="psm">{trucanate(post.description, 180)}</Text>
+      <Text size="psm">{trucanate(post.attributes.description, 175)}</Text>
       <Button
         bg="primary"
         color="white"
-        handleClick={() => router.push(`/aktualnosci/${post.slug}`)}
+        handleClick={() => router.push(`/aktualnosci/${post.id}`)}
         size="psm"
       >
         Czytaj dalej

@@ -19,16 +19,16 @@ const objectives = [
     isEarth: true,
   },
   {
-    date: '2020',
-    text: 'Praca na różnych płaszczyznach',
+    date: '',
+    text: 'Organizacja i kształtowanie się struktury koła',
   },
   {
-    date: '2024',
-    text: 'Wysłanie satelity w kosmos',
+    date: '2022',
+    text: 'Wysłanie do stratosfery sondy HABSat',
   },
   {
-    date: '2027',
-    text: 'Wysłanie kolejnej satelity',
+    date: '',
+    text: 'Budowa i wysłanie w kosmos satelity CubeSat ',
   },
 ]
 
@@ -51,7 +51,7 @@ const Objectives = () => {
         {objectives.map((el) => (
           <SingleObjective key={el.date}>
             <p>{el.text}</p>
-            <p>Rok {el.date}</p>
+            <p>{el.date !== '' ? 'Rok' : ''} {el.date}</p>
             <Connection />
             {el.isEarth ? (
               <EarthImage src="/earth.png" alt="earth" loading="lazy" />
@@ -69,6 +69,7 @@ const Objectives = () => {
         handleClick={handleClick}
         type="button"
         style={{ margin: '30px auto' }}
+        size='h2'
       >
         Kliknij!
       </Button>

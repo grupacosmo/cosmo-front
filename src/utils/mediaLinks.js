@@ -1,11 +1,7 @@
 export default [
   {
     icon: '/facebook.svg',
-    link: 'https://www.facebook.com/pkcosmopk/',
-  },
-  {
-    icon: '/twitter.svg',
-    link: 'https://twitter.com/pkcosmopk',
+    link: 'https://www.facebook.com/cosmopk.kn/',
   },
   {
     icon: '/github.svg',
@@ -13,6 +9,6 @@ export default [
   },
   {
     icon: '/instagram.svg',
-    link: 'https://www.instagram.com/pkcosmopk/',
+    link: 'https://www.instagram.com/cosmopk_kn/',
   },
 ]

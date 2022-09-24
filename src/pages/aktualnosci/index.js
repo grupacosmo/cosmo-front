@@ -1,7 +1,7 @@
 import React from 'react'
-import request from '@api'
-import { BLOG_POSTS } from '@graphql'
 import { NewsHero, Layout, Posts } from '@components'
+
+const { API_URL } = process.env
 
 const description =
   'Zobacz co ostatnio u nas się dzieję. Najnowsze newsy z koła.'
@@ -22,7 +22,9 @@ const News = ({ posts }) => {
 export default News
 
 export const getStaticProps = async () => {
-  const { posts } = await request({ query: BLOG_POSTS })
+  const req = await fetch(API_URL + "/posts?populate=*")
+  const data = await req.json()
+  const posts = data.data
 
   return { props: { posts } }
 }

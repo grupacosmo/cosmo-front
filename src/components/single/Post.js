@@ -3,6 +3,8 @@ import { Title, Text, Markdown, Section } from '@common'
 import { usePageOffset } from '@hooks'
 import { ContentWrapper, Image, Wrapper } from './Post.styles'
 
+const { URL } = process.env
+
 const Post = ({ post }) => {
   const offset = usePageOffset()
 
@@ -11,12 +13,12 @@ const Post = ({ post }) => {
       <Wrapper>
         <Image
           alt="hero"
-          src={post.photo.url}
+          src={URL + post.attributes.thumbnail.data.attributes.url}
           loading="lazy"
           translate={offset}
         />
 
-        <Title style={{ marginTop: '100px' }}>{post.title}</Title>
+        <Title style={{ marginTop: '100px' }}>{post.attributes.title}</Title>
         <Text
           color="white"
           style={{
@@ -31,8 +33,8 @@ const Post = ({ post }) => {
       </Wrapper>
       <Section>
         <ContentWrapper>
-          <time>Dodano: {post.date}</time>
-          <Markdown>{post.content}</Markdown>
+          <time>Dodano: {post.attributes.date}</time>
+          <Markdown>{post.attributes.content}</Markdown>
         </ContentWrapper>
       </Section>
     </>

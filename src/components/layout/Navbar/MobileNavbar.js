@@ -16,7 +16,7 @@ export const links = [
     text: 'Kim jesteśmy',
     link: '/#kim',
   },
-  { text: 'Kontakt', link: '/#kontakt' },
+  // { text: 'Kontakt', link: '/#kontakt' },
   { text: 'Sponsorzy', link: '/#sponsorzy' },
   { text: 'Aktualności', link: '/aktualnosci' },
 ]

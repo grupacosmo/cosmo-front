@@ -6,45 +6,45 @@ import { InnerWrapper, Team, TeamsWrapper, Wrapper } from './Join.styles'
 const teams = [
   {
     icon: '/website.svg',
-    title: 'Team Webdev',
-    secondaryText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    title: 'Webdev',
+    secondaryText: 'Stworzyli również stroną HABSat i zapewniają nam najwyższą jakość zarówno od strony wizualnej jak i użytkowej. ',
     text:
-      'Praesent eu nibh nec quam vulputate tempus. Cras vel est nisl. In non vulputate ex. Ut id faucibus elit.',
+      'Osoby z tego teamu projektują i implementują aplikacji i strony internetowe . Strona którą właśnie czytacie jest ich dziełem.',
   },
   {
     icon: '/microchip.svg',
-    title: 'Team OBC',
-    secondaryText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    title: 'OBC',
+    secondaryText: 'Wszystkie najważniejsze funkcje naszych sond, takie jak kontakt z Ziemią, zbieranie i pobieranie danych pomiarowych oraz informacji na temat aktualnego położenia sondy, są ich zasługą.',
     text:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu nibh nec quam vulputate tempus. Cras vel est nisl. In non vulputate ex. Ut id faucibus elit.',
+      'Członkowie tego działu odpowiadają za komputer pokładowy we wszystkich projektach.',
   },
   {
     icon: '/innovation.svg',
-    title: 'Team AI',
-    secondaryText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    title: 'AI',
+    secondaryText: 'Posługują się w swoich projektach różnymi rodzajami uczenia maszynowego.',
     text:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu nibh nec quam vulputate tempus. Cras vel est nisl. In non vulputate ex. Ut id faucibus elit.',
+      'Członkowie tego zespołu zajmują się analizą i przetwarzaniem obrazu. Przeprowadzają eksperymenty na podstawie, których uczona jest sztuczna inteligencja.',
   },
   {
     icon: '/bullhorn.svg',
     title: 'Team Marketingu',
-    secondaryText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    secondaryText: 'Rozmawiają z naszymi partnerami i dbanie o nasze finanse i zarządzanie kołem.',
     text:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu nibh nec quam vulputate tempus. Cras vel est nisl. In non vulputate ex. Ut id faucibus elit.',
   },
   {
     icon: '/globe.svg',
-    title: 'Team Komunikacji',
-    secondaryText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    title: 'Logistyka',
+    secondaryText: 'Rozmawiają z naszymi partnerami i dbanie o nasze finanse i zarządzanie kołem.',
     text:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu nibh nec quam vulputate tempus. Cras vel est nisl. In non vulputate ex. Ut id faucibus elit.',
+      'Nasi organizatorzy. Organizacją wydarzenia związanych z naszym kołem takich jak szkolenia czy uczestnictwo w zlotach i konkursach naszych członków.',
   },
   {
-    icon: '/logistics.svg',
-    title: 'Team Logistyki',
-    secondaryText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    icon: '/electronic.svg',
+    title: 'Elektro-mech',
+    secondaryText: '',
     text:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu nibh nec quam vulputate tempus. Cras vel est nisl. In non vulputate ex. Ut id faucibus elit.',
+      'Do tego działu należą osoby posiadające umiejętności pozwalające na projektowanie, prototypowanie elektroniki, druków 3D oraz konstrukcji mechanicznych.',
   },
 ]
 

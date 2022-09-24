@@ -23,7 +23,7 @@ const Blog = ({ posts }) => {
               marginBottom: '75px',
             }}
           >
-            {posts.map((post) => (
+            {posts.slice(0,3).map((post) => (
               <Post key={post.id} post={post} />
             ))}
           </FlexWrap>
