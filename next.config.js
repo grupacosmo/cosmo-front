@@ -1,4 +1,7 @@
 module.exports = {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   images: {
     domains: ['media.graphcms.com', 'api.cosmo-pk.live'],
     remotePatterns: [
