@@ -1,4 +1,5 @@
 module.exports = {
+  basePath: '/',
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -8,7 +9,6 @@ module.exports = {
       {
         protocol: 'http',
         hostname: 'api.cosmo-pk.live',
-        port: '',
         pathname: '/uploads/**',
       },
     ],
