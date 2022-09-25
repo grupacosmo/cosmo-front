@@ -1,5 +1,5 @@
 module.exports = {
-  basePath: '/',
+  trailingSlash: true,
   eslint: {
     ignoreDuringBuilds: true,
   },
